@@ -13,7 +13,6 @@
 
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
 </head>
 <body>
 
@@ -39,6 +38,15 @@
          <input type="number" id="sens" placeholder="인게임 감도">
          <button onclick="calculateEDPI()">계산하기</button>
          <div id="result">결과: 0</div>
+         <div id="gauge-container">
+             <div id="gauge-bar"></div>
+             <div id="gauge-labels">
+                 <span>0</span>
+                 <span>400</span>
+                 <span>800</span>
+                 <span>1200+</span>
+             </div>
+         </div>
      </section>
 
 <div id="ad-container">
@@ -47,4 +55,5 @@
         <p>Google AdSense 코드를 여기에 삽입하세요</p>
     </div>
 </div>
+<script src="script.js"></script>
 </body>

@@ -57,6 +57,28 @@ article#blog-content div {
     text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
 }
 
+#gauge-container {
+    margin-top: 30px;
+    width: 100%;
+}
+
+#gauge-bar {
+    width: 0%;
+    height: 20px;
+    background: linear-gradient(90deg, #4a90e2, #00ff9d, #ff6b6b);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+    position: relative;
+}
+
+#gauge-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    color: #888;
+    font-size: 0.8rem;
+}
+
 #ad-container {
     max-width: 800px;
     margin: 0 auto 60px auto;
