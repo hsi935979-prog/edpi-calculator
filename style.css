@@ -1,0 +1,133 @@
+/* 기존 body 스타일을 이렇게 수정 (글자색 진하게) */
+body {
+    background: #0f0f10; /* 더 깊은 블랙으로 */
+    color: #e0e0e0;      /* 글자를 좀 더 밝게 */
+    font-family: 'Pretendard', sans-serif;
+    /*...나머지 코드는 유지 ...*/
+}
+
+/* article 영역의 글자 색을 명확하게 */
+article#blog-content p {
+    color: #d1d1d1 !important; /*약간 더 밝은 회색으로 변경 */
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+article#blog-content {
+    margin-bottom: 60px;
+}
+
+/*하단 결론 박스 배경을 좀 더 어둡게 해서 대비 높이기 */
+article#blog-content div {
+    background: rgba(0, 255, 157, 0.15) !important;
+    border-left: 4px solid #00ff9d !important;
+    color: #ffffff !important; /*박스 안 글자는 흰색으로 */
+}
+
+#calculator {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+}
+
+#calculator input {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+#calculator button {
+    padding: 10px 20px;
+    background-color: #00ff9d;
+    color : #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00ff9d;
+    text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+}
+
+#ad-container {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    padding: 20px;
+}
+
+.ad-placeholder {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed #444;
+    border-radius: 8px;
+    padding: 40px 20px;
+    text-align: center;
+    color: #888;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.ad-placeholder p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    
+    article#blog-content {
+        padding: 15px !important;
+        margin-bottom: 40px;
+    }
+    
+    article#blog-content p {
+        font-size: 1rem;
+    }
+    
+    #calculator {
+        padding: 20px;
+        margin: 0 auto 40px auto;
+    }
+    
+    #calculator input {
+        width: 100%;
+        padding: 15px;
+        margin: 8px 0;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+    
+    #calculator button {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    
+    #result {
+        font-size: 1.5rem;
+    }
+    
+    #ad-container {
+        padding: 15px;
+        margin: 0 auto 40px auto;
+    }
+    
+    .ad-placeholder {
+        padding: 30px 15px;
+    }
+}

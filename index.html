@@ -1,0 +1,50 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>eDPI 계산기 | 나만의 최적 게임 감도 찾기</title>
+    <meta name="description" content="발로란트, 오버워치, 카스2 등 FPS 게임을 위한 필수 eDPI 계산기. 나만의 DPI와 인게임 감도를 입력해 최적의 설정을 확인하고 에임을 개선하세요.">
+    <meta name="Keywords" content="eDPI 계산기, FPS 감도, 발로란트 감도 설정, 오버워치 감도 계산, 게임 에임 향상, 최적 감도 찾기">
+
+    <meta property="og:title" content="eDPI 계산기 | 나만의 최적 게임 감도 찾기">
+    <meta property="og:description" content="감도 유목민 탈출! 지금 바로 내 최적의 eDPI를 확인해보세요.">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+
+<article id="blog-content" style="padding: 20px; line-height: 1.6; color: #e0e0e0; max-width: 800px; margin: auto;">
+    <h2 style="color: #00ff9d;">프로게이머 설정, 왜 무작정 따라 하면 손해일까?</h2>
+
+    <p>많은 게이머들이 '에임이 안 좋아지면 프로의 설정을 가져온다'는 공식을 따릅니다. 하지만 결과는 어떤가요? 대부분의 경우, 갑자기 바뀐 감도에 적응하지 못하고 에임은 더 흔들리기 마련입니다.</p>
+
+    <p> 그 이유는 간단합니다. 프로게이머들은 각자의 <strong>마우스 그립법, 사용하는 마우스 패드의 재질 심지어는 모니터의 해상도까지</strong> 우리와는 전혀 다른 환경에서 플레이하기 때문입니다. 그들에게 최적화된 감도가 당신의 손과 환경에 맞을 리가 없죠.</p>
+
+    <p><strong>진짜 실력은 '따라 하기'가 아니라 '기준을 잡는 것'에서 시작됩니다.</strong></p>
+
+    <p>본인의 DPI와 인게임 감도를 바탕으로 객관적인 <strong>eDPI</strong>를 산출해보세요 내 환경에서 1cm를 이동했을 때 화면이 얼마나 돌아가는지 아는 사람만이, 비로소 자신만의 감도를 정착시킬 수 있습니다.</p>
+
+    <div style="background: rgba(0, 255, 157, 0.1); padding: 15px; border-left: 4px solid #00ff9d; margin-top: 20px;">
+        <p><strong>결론:</strong> 무작정 남의 값을 복사하지 마세요. 아래 계산기를 통해 당신만의 eDPI 기준값을 찾고, 5%씩 미세하게 조정하며 당신만의 정답을 찾아가세요.</p>
+    </div>
+</article>
+
+<section id="calculator">
+         <h2>eDPI 계산기</h2>
+         <input type="number" id="dpi" placeholder="DPI 입력">
+         <input type="number" id="sens" placeholder="인게임 감도">
+         <button onclick="calculateEDPI()">계산하기</button>
+         <div id="result">결과: 0</div>
+     </section>
+
+<div id="ad-container">
+    <div class="ad-placeholder">
+        <p>광고 영역</p>
+        <p>Google AdSense 코드를 여기에 삽입하세요</p>
+    </div>
+</div>
+</body>
