@@ -63,6 +63,22 @@
              <h3>나에게 맞는 감도 찾는 법</h3>
              <p>eDPI를 기준으로 5%씩 미세하게 조정하며 자신만의 최적 감도를 찾아보세요. 너무 급격하게 변경하면 적응하기 어렵습니다.</p>
          </div>
+         
+         <div id="valorant-converter">
+             <h3>발로란트 감도 변환기</h3>
+             <p>타 게임의 감도를 발로란트로 변환하세요</p>
+             <select id="source-game">
+                 <option value="">원본 게임 선택</option>
+                 <option value="overwatch">오버워치</option>
+                 <option value="apex">에이펙스 레전드</option>
+                 <option value="csgo">CS:GO/CS2</option>
+                 <option value="fortnite">포트나이트</option>
+             </select>
+             <input type="number" id="source-dpi" placeholder="원본 게임 DPI">
+             <input type="number" id="source-sens" placeholder="원본 게임 감도">
+             <button onclick="convertToValorant()">발로란트 감도로 변환</button>
+             <div id="valorant-result"></div>
+         </div>
      </section>
 
 <div id="ad-container">

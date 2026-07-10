@@ -140,6 +140,76 @@ article#blog-content div {
     margin: 0;
 }
 
+#valorant-converter {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#valorant-converter h3 {
+    color: #ff4655;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+#valorant-converter > p {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+#source-game {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#source-game option {
+    background: #0f0f10;
+    color: #e0e0e0;
+}
+
+#source-dpi, #source-sens {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+#valorant-converter button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff4655;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#valorant-result {
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(255, 70, 85, 0.1);
+    border-radius: 5px;
+    color: #ff4655;
+    font-weight: bold;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+}
+
 #ad-container {
     max-width: 800px;
     margin: 0 auto 60px auto;

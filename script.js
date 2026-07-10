@@ -85,3 +85,45 @@ function convertSensitivity() {
 
 // 게임 선택 변경 시 자동 변환
 document.getElementById('game-select').addEventListener('change', convertSensitivity);
+
+function convertToValorant() {
+    const sourceGame = document.getElementById('source-game').value;
+    const sourceDPI = document.getElementById('source-dpi').value;
+    const sourceSens = document.getElementById('source-sens').value;
+    const valorantResult = document.getElementById('valorant-result');
+    
+    if (!sourceGame) {
+        valorantResult.innerText = "원본 게임을 선택해주세요.";
+        return;
+    }
+    
+    if (sourceDPI <= 0 || sourceSens <= 0) {
+        valorantResult.innerText = "올바른 DPI와 감도를 입력해주세요.";
+        return;
+    }
+    
+    // 원본 게임의 eDPI 계산
+    const sourceEDPI = sourceDPI * sourceSens;
+    
+    // 발로란트 감도 계산 (eDPI / 사용자 DPI)
+    // 사용자가 발로란트에서도 같은 DPI를 사용한다고 가정
+    const valorantSens = (sourceEDPI / sourceDPI).toFixed(3);
+    
+    let gameName = "";
+    switch(sourceGame) {
+        case 'overwatch':
+            gameName = "오버워치";
+            break;
+        case 'apex':
+            gameName = "에이펙스 레전드";
+            break;
+        case 'csgo':
+            gameName = "CS:GO/CS2";
+            break;
+        case 'fortnite':
+            gameName = "포트나이트";
+            break;
+    }
+    
+    valorantResult.innerText = `${gameName} 감도 ${sourceSens} → 발로란트 감도: ${valorantSens}`;
+}
