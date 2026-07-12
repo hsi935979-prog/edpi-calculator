@@ -37,6 +37,7 @@
          <input type="number" id="dpi" placeholder="DPI 입력">
          <input type="number" id="sens" placeholder="인게임 감도">
          <button onclick="calculateEDPI()">계산하기</button>
+         <button onclick="saveSettings()">저장하기</button>
          <div id="result">결과: 0</div>
          <div id="gauge-container">
              <div id="gauge-bar"></div>
@@ -78,6 +79,23 @@
              <input type="number" id="source-sens" placeholder="원본 게임 감도">
              <button onclick="convertToValorant()">발로란트 감도로 변환</button>
              <div id="valorant-result"></div>
+         </div>
+         
+         <div id="saved-settings">
+             <h3>저장된 감도 설정</h3>
+             <table id="settings-table">
+                 <thead>
+                     <tr>
+                         <th>날짜</th>
+                         <th>DPI</th>
+                         <th>감도</th>
+                         <th>eDPI</th>
+                         <th>삭제</th>
+                     </tr>
+                 </thead>
+                 <tbody id="settings-body">
+                 </tbody>
+             </table>
          </div>
      </section>
 

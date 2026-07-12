@@ -47,6 +47,12 @@ article#blog-content div {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    margin: 5px;
+}
+
+#calculator button:nth-child(4) {
+    background-color: #ff6b6b;
+    color: #fff;
 }
 
 #result {
@@ -208,6 +214,59 @@ article#blog-content div {
     min-height: 50px;
     display: flex;
     align-items: center;
+}
+
+#saved-settings {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#saved-settings h3 {
+    color: #00ff9d;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+#settings-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#settings-table th,
+#settings-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#settings-table th {
+    background: rgba(0, 255, 157, 0.1);
+    color: #00ff9d;
+    font-weight: bold;
+}
+
+#settings-table td {
+    color: #d1d1d1;
+}
+
+#settings-table tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.delete-btn {
+    background: #ff6b6b;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.delete-btn:hover {
+    background: #ff5252;
 }
 
 #ad-container {

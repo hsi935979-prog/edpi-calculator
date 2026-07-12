@@ -126,4 +126,103 @@ function convertToValorant() {
     }
     
     valorantResult.innerText = `${gameName} 감도 ${sourceSens} → 발로란트 감도: ${valorantSens}`;
+    
+    // 발로란트 감도로 자동 저장
+    const valorantEDPI = sourceDPI * valorantSens;
+    saveSensitivity(sourceDPI, valorantSens, valorantEDPI);
 }
+
+// 저장된 설정 관리
+function saveSensitivity(dpi, sens, edpi) {
+    if (dpi <= 0 || sens <= 0) {
+        return;
+    }
+    
+    // localStorage에서 기존 설정 가져오기
+    let settings = JSON.parse(localStorage.getItem('edpiSettings')) || [];
+    
+    // 중복 체크 (같은 DPI와 감도가 이미 있는지 확인)
+    const isDuplicate = settings.some(setting => 
+        setting.dpi == dpi && setting.sens == sens
+    );
+    
+    if (isDuplicate) {
+        return; // 중복이면 저장하지 않음
+    }
+    
+    const now = new Date();
+    const dateString = now.toLocaleDateString('ko-KR', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+    
+    const setting = {
+        id: Date.now(),
+        date: dateString,
+        dpi: dpi,
+        sens: sens,
+        edpi: edpi
+    };
+    
+    settings.unshift(setting); // 최신 설정을 맨 앞에 추가
+    
+    // 최대 10개만 저장
+    if (settings.length > 10) {
+        settings = settings.slice(0, 10);
+    }
+    
+    localStorage.setItem('edpiSettings', JSON.stringify(settings));
+    loadSettings();
+}
+
+function saveSettings() {
+    const dpi = document.getElementById('dpi').value;
+    const sens = document.getElementById('sens').value;
+    
+    if (dpi <= 0 || sens <= 0) {
+        alert('올바른 DPI와 감도를 입력해주세요.');
+        return;
+    }
+    
+    const edpi = dpi * sens;
+    saveSensitivity(dpi, sens, edpi);
+    alert('설정이 저장되었습니다.');
+}
+
+function loadSettings() {
+    const settings = JSON.parse(localStorage.getItem('edpiSettings')) || [];
+    const tbody = document.getElementById('settings-body');
+    tbody.innerHTML = '';
+    
+    if (settings.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; color: #888;">저장된 설정이 없습니다.</td></tr>';
+        return;
+    }
+    
+    settings.forEach(setting => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${setting.date}</td>
+            <td>${setting.dpi}</td>
+            <td>${setting.sens}</td>
+            <td>${setting.edpi}</td>
+            <td><button class="delete-btn" onclick="deleteSetting(${setting.id})">삭제</button></td>
+        `;
+        tbody.appendChild(row);
+    });
+}
+
+function deleteSetting(id) {
+    let settings = JSON.parse(localStorage.getItem('edpiSettings')) || [];
+    settings = settings.filter(setting => setting.id !== id);
+    localStorage.setItem('edpiSettings', JSON.stringify(settings));
+    loadSettings();
+}
+
+// 페이지 로드 시 저장된 설정 표시
+window.onload = function() {
+    loadSettings();
+};
