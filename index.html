@@ -5,14 +5,16 @@
 
     <title>eDPI 계산기 | 나만의 최적 게임 감도 찾기</title>
     <meta name="description" content="발로란트, 오버워치, 카스2 등 FPS 게임을 위한 필수 eDPI 계산기. 나만의 DPI와 인게임 감도를 입력해 최적의 설정을 확인하고 에임을 개선하세요.">
-    <meta name="Keywords" content="eDPI 계산기, FPS 감도, 발로란트 감도 설정, 오버워치 감도 계산, 게임 에임 향상, 최적 감도 찾기">
+    <meta name="Keywords" content="eDPI 계산기, FPS 감도, 발로란트 감도 설정, 오버워치 감도 계산, 게임 에임 향상, 최적 감도 찾기, 게임 감도 변환">
 
     <meta property="og:title" content="eDPI 계산기 | 나만의 최적 게임 감도 찾기">
     <meta property="og:description" content="감도 유목민 탈출! 지금 바로 내 최적의 eDPI를 확인해보세요.">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="placeholder.jpg">
 
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
@@ -34,8 +36,14 @@
 
 <section id="calculator">
          <h2>eDPI 계산기</h2>
-         <input type="number" id="dpi" placeholder="DPI 입력">
-         <input type="number" id="sens" placeholder="인게임 감도">
+         <div class="input-wrapper">
+             <i data-lucide="mouse"></i>
+             <input type="number" id="dpi" placeholder="DPI 입력">
+         </div>
+         <div class="input-wrapper">
+             <i data-lucide="settings-2"></i>
+             <input type="number" id="sens" placeholder="인게임 감도">
+         </div>
          <button onclick="calculateEDPI()">계산하기</button>
          <button onclick="saveSettings()">저장하기</button>
          <div id="result">결과: 0</div>
@@ -51,12 +59,15 @@
          
          <div id="game-converter">
              <h3>게임별 감도 변환</h3>
-             <select id="game-select">
-                 <option value="">게임 선택</option>
-                 <option value="valorant">발로란트</option>
-                 <option value="overwatch">오버워치</option>
-                 <option value="apex">에이펙스 레전드</option>
-             </select>
+             <div class="input-wrapper">
+                 <i data-lucide="gamepad-2"></i>
+                 <select id="game-select">
+                     <option value="">게임 선택</option>
+                     <option value="valorant">발로란트</option>
+                     <option value="overwatch">오버워치</option>
+                     <option value="apex">에이펙스 레전드</option>
+                 </select>
+             </div>
              <div id="converted-result"></div>
          </div>
          
@@ -68,16 +79,25 @@
          <div id="valorant-converter">
              <h3>발로란트 감도 변환기</h3>
              <p>타 게임의 감도를 발로란트로 변환하세요</p>
-             <select id="source-game">
-                 <option value="">원본 게임 선택</option>
-                 <option value="overwatch">오버워치</option>
-                 <option value="apex">에이펙스 레전드</option>
-                 <option value="csgo">CS:GO/CS2</option>
-                 <option value="fortnite">포트나이트</option>
-             </select>
-             <input type="number" id="source-dpi" placeholder="원본 게임 DPI">
-             <input type="number" id="source-sens" placeholder="원본 게임 감도">
-             <button onclick="convertToValorant()">발로란트 감도로 변환</button>
+             <div class="input-wrapper">
+                 <i data-lucide="gamepad-2"></i>
+                 <select id="source-game">
+                     <option value="">원본 게임 선택</option>
+                     <option value="overwatch">오버워치</option>
+                     <option value="apex">에이펙스 레전드</option>
+                     <option value="csgo">CS:GO/CS2</option>
+                     <option value="fortnite">포트나이트</option>
+                 </select>
+             </div>
+             <div class="input-wrapper">
+                 <i data-lucide="mouse"></i>
+                 <input type="number" id="source-dpi" placeholder="원본 게임 DPI">
+             </div>
+             <div class="input-wrapper">
+                 <i data-lucide="settings-2"></i>
+                 <input type="number" id="source-sens" placeholder="원본 게임 감도">
+             </div>
+             <button onclick="convertToValorant()"><i data-lucide="refresh-cw"></i> 발로란트 감도로 변환</button>
              <div id="valorant-result"></div>
          </div>
          
@@ -106,4 +126,5 @@
     </div>
 </div>
 <script src="script.js"></script>
+<script>lucide.createIcons();</script>
 </body>

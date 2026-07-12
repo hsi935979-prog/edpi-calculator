@@ -48,11 +48,51 @@ article#blog-content div {
     cursor: pointer;
     font-weight: bold;
     margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 #calculator button:nth-child(4) {
     background-color: #ff6b6b;
     color: #fff;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 12px;
+    color: #00ff9d;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+    padding-left: 40px;
+}
+
+#game-converter .input-wrapper i,
+#valorant-converter .input-wrapper i {
+    color: #00ff9d;
+}
+
+#valorant-converter button i {
+    color: #fff;
+}
+
+.delete-btn i {
+    color: #fff;
+    width: 16px;
+    height: 16px;
 }
 
 #result {

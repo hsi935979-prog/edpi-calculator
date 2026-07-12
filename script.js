@@ -209,10 +209,12 @@ function loadSettings() {
             <td>${setting.dpi}</td>
             <td>${setting.sens}</td>
             <td>${setting.edpi}</td>
-            <td><button class="delete-btn" onclick="deleteSetting(${setting.id})">삭제</button></td>
+            <td><button class="delete-btn" onclick="deleteSetting(${setting.id})"><i data-lucide="trash-2"></i></button></td>
         `;
         tbody.appendChild(row);
     });
+    
+    lucide.createIcons();
 }
 
 function deleteSetting(id) {
